@@ -96,9 +96,8 @@
     "webpack-dev-server": "4.9.3"
   },
   "peerDependencies": {
+    "@babel/runtime": ">=7",
     "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "@babel/runtime": ">=7"
-  },
-  "dependencies": {}
+    "react-dom": ">=16.8"
+  }
 }
