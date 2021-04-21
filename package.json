@@ -46,7 +46,7 @@
     "*.d.ts"
   ],
   "module": "esm/index.js",
-  "main": "cjs/index.js",
+  "main": "./cjs/index.js",
   "browser": "umd/index.js",
   "types": "react-image.d.ts",
   "author": "mbrevda@gmail.com",
