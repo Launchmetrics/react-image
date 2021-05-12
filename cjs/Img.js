@@ -2,7 +2,7 @@
 
 var _objectWithoutPropertiesLoose = require('@babel/runtime/helpers/objectWithoutPropertiesLoose');
 var React = require('react');
-var useImage = require('./useImage-cea931dd.js');
+var useImage = require('./useImage-71d25270.js');
 require('@babel/runtime/helpers/defineProperty');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -31,13 +31,15 @@ function Img(_ref) {
       unloaderContainer = _ref$unloaderContaine === void 0 ? passthroughContainer : _ref$unloaderContaine,
       imgPromise = _ref.imgPromise,
       crossorigin = _ref.crossorigin,
+      referrerPolicy = _ref.referrerPolicy,
       _ref$useSuspense = _ref.useSuspense,
       useSuspense = _ref$useSuspense === void 0 ? false : _ref$useSuspense,
-      imgProps = _objectWithoutPropertiesLoose__default['default'](_ref, ["decode", "src", "loader", "unloader", "container", "loaderContainer", "unloaderContainer", "imgPromise", "crossorigin", "useSuspense"]);
+      imgProps = _objectWithoutPropertiesLoose__default['default'](_ref, ["decode", "src", "loader", "unloader", "container", "loaderContainer", "unloaderContainer", "imgPromise", "crossorigin", "referrerPolicy", "useSuspense"]);
 
   imgPromise = imgPromise || useImage.imagePromiseFactory({
     decode: decode,
-    crossOrigin: crossorigin
+    crossOrigin: crossorigin,
+    referrerPolicy: referrerPolicy
   });
 
   var _useImage = useImage.useImage({
@@ -46,13 +48,15 @@ function Img(_ref) {
     useSuspense: useSuspense
   }),
       src = _useImage.src,
-      isLoading = _useImage.isLoading; // console.log({src, isLoading, resolvedSrc, useSuspense})
-  // show img if loaded
+      isLoading = _useImage.isLoading; // show img if loade
 
 
-  if (src) return container( /*#__PURE__*/React__default['default'].createElement("img", Object.assign({
-    src: src
-  }, imgProps))); // show loader if we have one and were still trying to load image
+  if (src) {
+    return container( /*#__PURE__*/React__default['default'].createElement("img", Object.assign({
+      src: src
+    }, imgProps)));
+  } // show loader if we have one and were still trying to load image
+
 
   if (!useSuspense && isLoading) return loaderContainer(loader); // show unloader if we have one and we have no more work to do
 

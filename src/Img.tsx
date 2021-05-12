@@ -38,18 +38,17 @@ export default function Img({
   ...imgProps // anything else will be passed to the <img> element
 }: ImgProps): JSX.Element | null {
   imgPromise =
-    imgPromise || imagePromiseFactory({decode, crossOrigin: crossorigin})
+    imgPromise ||
+    imagePromiseFactory({decode, crossOrigin: crossorigin, referrerPolicy})
   const {src, isLoading} = useImage({
     srcList,
     imgPromise,
     useSuspense,
   })
 
-  // show img if loaded
+  // show img if loade
   if (src) {
-    return container(
-      <img referrerPolicy={referrerPolicy} src={src} {...imgProps} />
-    )
+    return container(<img src={src} {...imgProps} />)
   }
   // show loader if we have one and were still trying to load image
   if (!useSuspense && isLoading) return loaderContainer(loader)

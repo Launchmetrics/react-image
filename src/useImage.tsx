@@ -35,7 +35,10 @@ const promiseFind = (arr, promiseFactory) => {
 
 export default function useImage({
   srcList,
-  imgPromise = imagePromiseFactory({decode: true}),
+  imgPromise = imagePromiseFactory({
+    decode: true,
+    referrerPolicy: 'origin',
+  }),
   useSuspense = true,
 }: useImageProps): {src: string | undefined; isLoading: boolean; error: any} {
   const [, setIsLoading] = useState(true)

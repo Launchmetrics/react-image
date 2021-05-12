@@ -11,7 +11,7 @@ test('should ssr a loader', () => {
 
 test('should ssr nothing if only src is set', () => {
   const html = ReactDOMServer.renderToStaticMarkup(
-    <Img src="foo11" mockImage={{}} />
+    <Img referrerPolicy="no-referrer" src="foo11" mockImage={{}} />
   )
   expect(html).toEqual('')
 })

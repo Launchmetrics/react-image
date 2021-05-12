@@ -2,7 +2,7 @@
 
 require('@babel/runtime/helpers/defineProperty');
 require('react');
-var useImage = require('./useImage-cea931dd.js');
+var useImage = require('./useImage-71d25270.js');
 
 
 
