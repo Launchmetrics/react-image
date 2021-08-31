@@ -1,14 +1,21 @@
 'use strict';
 
+var _defineProperty = require('@babel/runtime/helpers/defineProperty');
 var _objectWithoutPropertiesLoose = require('@babel/runtime/helpers/objectWithoutPropertiesLoose');
 var React = require('react');
-var useImage = require('./useImage-71d25270.js');
-require('@babel/runtime/helpers/defineProperty');
+var useImage = require('./useImage-463f1aad.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+var _defineProperty__default = /*#__PURE__*/_interopDefaultLegacy(_defineProperty);
 var _objectWithoutPropertiesLoose__default = /*#__PURE__*/_interopDefaultLegacy(_objectWithoutPropertiesLoose);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+
+var _excluded = ["decode", "src", "loader", "unloader", "container", "loaderContainer", "unloaderContainer", "imgPromise", "crossorigin", "referrerPolicy", "useSuspense"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty__default["default"](target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 var passthroughContainer = function passthroughContainer(x) {
   return x;
@@ -34,7 +41,7 @@ function Img(_ref) {
       referrerPolicy = _ref.referrerPolicy,
       _ref$useSuspense = _ref.useSuspense,
       useSuspense = _ref$useSuspense === void 0 ? false : _ref$useSuspense,
-      imgProps = _objectWithoutPropertiesLoose__default['default'](_ref, ["decode", "src", "loader", "unloader", "container", "loaderContainer", "unloaderContainer", "imgPromise", "crossorigin", "referrerPolicy", "useSuspense"]);
+      imgProps = _objectWithoutPropertiesLoose__default["default"](_ref, _excluded);
 
   imgPromise = imgPromise || useImage.imagePromiseFactory({
     decode: decode,
@@ -52,7 +59,7 @@ function Img(_ref) {
 
 
   if (src) {
-    return container( /*#__PURE__*/React__default['default'].createElement("img", Object.assign({
+    return container( /*#__PURE__*/React__default["default"].createElement("img", _objectSpread({
       src: src
     }, imgProps)));
   } // show loader if we have one and were still trying to load image

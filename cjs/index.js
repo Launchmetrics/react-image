@@ -3,10 +3,10 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var Img = require('./Img.js');
-var useImage = require('./useImage-71d25270.js');
+var useImage = require('./useImage-463f1aad.js');
+require('@babel/runtime/helpers/defineProperty');
 require('@babel/runtime/helpers/objectWithoutPropertiesLoose');
 require('react');
-require('@babel/runtime/helpers/defineProperty');
 
 
 
